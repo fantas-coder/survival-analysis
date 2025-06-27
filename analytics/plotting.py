@@ -137,8 +137,8 @@ class PlottingFunctions:
             xmax=sample['interval_censored_value'][~sample['interval_censored_value'].isna()],
             color='orange', linestyles='--', alpha=0.35)
 
-        plt.title('Распределение времени выживаемости')
-        plt.xlabel('Время смерти, Xi')
+        plt.title('Распределение времени рождения и смерти')
+        plt.xlabel('Время рождения и смерти, Xi')
         plt.ylabel('Индекс, i')
         plt.legend()
         plt.grid(True, linestyle='--', linewidth=0.5, alpha=0.7, zorder=0)

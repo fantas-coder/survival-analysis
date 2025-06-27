@@ -92,7 +92,7 @@ def main(
 
     if not s_mark.empty and len(s_mark) > 1:
         # Получаем для оценки Каплана-Майера доверительный интервал по формуле Гринвуда
-        confidence_interval = km.greenwood_confidence_interval(data, s_mark, ALPHA_FOR_GREENWOOD)
+        confidence_interval = km.greenwood_confidence_interval(data, s_mark, alpha=ALPHA_FOR_GREENWOOD)
 
         # Сравниваем с реальным значением
         plotter.paint_confidence_interval_with_kaplan_mayer(confidence_interval, s_mark)
@@ -319,7 +319,7 @@ def research(
 if __name__ == '__main__':
     research_flag = False
     if not research_flag:
-        main(20, "weibull", shape=3, scale=2, loc=0, l_share=0.2, i_share=0.2, r_share=0.2, threshold=50, deep_coeff=1/3)
+        main(20, "weibull", shape=3, scale=2, loc=0, l_share=0.2, i_share=0.2, r_share=0.2, threshold=4, deep_coeff=1/3)
     else:
         research(100, "weibull", shape=3, scale=2, loc=0, l_share=0.0, i_share=0.0, r_share=0.0)
 
